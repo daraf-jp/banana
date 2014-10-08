@@ -1,29 +1,38 @@
+<?php
+/*
+Template Name:service
+*/
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>株式会社バナナデザイン</title>
-<link rel="stylesheet"  href="style.css">
-<link rel="stylesheet"  href="about.css">
-<link rel="stylesheet"  href="service.css">
+<link rel="stylesheet"  href="<?php bloginfo('stylesheet_url'); ?>">
+<link rel="stylesheet"  href="<?php bloginfo('template_url'); ?>/css/about.css">
+<link rel="stylesheet"  href="<?php bloginfo('template_url'); ?>/css/service.css">
 </head>
 <body>
   <nav class="top-nav">
     <ul>
       <li class="logo">
-        <a href="index.html" class="nav-logo"><img src="img/logo.png"></a>
+        <a href="<?php bloginfo('url'); ?>" class="nav-logo"><img src="<?php bloginfo('template_url'); ?>/img/logo.png"></a>
       </li>
       <li class="list-border"></li>
       <li>
-        <a href="index.html" class="nav-link">ホーム</a>
+        <a href="<?php bloginfo('url'); ?>" class="nav-link">ホーム</a>
       </li>
       <li class="list-border"></li>
       <li>
-        <a href="about.html" class="nav-link">組織概要</a>
+        <a href="<?php bloginfo('url'); ?>/about" class="nav-link">組織概要</a>
       </li>
       <li class="list-border"></li>
       <li>
-        <a href="service.html" class="active nav-link">事業内容</a>
+        <a href="<?php bloginfo('url'); ?>/service" class="active nav-link">事業内容</a>
+      </li>
+      <li class="list-border"></li>
+      <li>
+        <a href="<?php bloginfo('url'); ?>/blog" class="nav-link">ブログ</a>
       </li>
       <li class="list-border"></li>
       <div class="clear"></div>
@@ -41,7 +50,7 @@
           <ul>
             <li>
               <a href="#service" class="side-link">
-                <img src="img/banana.png" width="20">
+                <img src="<?php bloginfo('template_url'); ?>/img/banana.png" width="20">
                 事業内容
               </a>
             </li>
@@ -56,7 +65,7 @@
           <div class="box-content">
             <h3>おもなサービス</h3>
             <div class="media">
-              <div class="image"><img src="img/service.png"></div>
+              <div class="image"><img src="<?php bloginfo('template_url'); ?>/img/service.png"></div>
               <div class="media-content">
                 <div class="service-name">
                   BANANA

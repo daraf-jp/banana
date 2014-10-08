@@ -1,9 +1,14 @@
+<?php
+/*
+Template Name:top
+*/
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>株式会社バナナデザイン</title>
-<link rel="stylesheet"  href="style.css">
+<link rel="stylesheet"  href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
 <body>
   <div class="top-head">
@@ -14,19 +19,23 @@
   <nav class="top-nav">
     <ul>
       <li class="logo">
-        <a href="index.html" class="nav-logo"><img src="img/logo.png"></a>
+        <a href="<?php bloginfo('url'); ?>" class="nav-logo"><img src="<?php bloginfo('template_url'); ?>/img/logo.png"></a>
       </li>
       <li class="list-border"></li>
       <li>
-        <a href="index.html" class="active nav-link">ホーム</a>
+        <a href="<?php bloginfo('url'); ?>" class="active nav-link">ホーム</a>
       </li>
       <li class="list-border"></li>
       <li>
-        <a href="about.html" class="nav-link">組織概要</a>
+        <a href="<?php bloginfo('url'); ?>/about" class="nav-link">組織概要</a>
       </li>
       <li class="list-border"></li>
       <li>
-        <a href="service.html" class="nav-link">事業内容</a>
+        <a href="<?php bloginfo('url'); ?>/service" class="nav-link">事業内容</a>
+      </li>
+      <li class="list-border"></li>
+      <li>
+        <a href="<?php bloginfo('url'); ?>/blog" class="nav-link">ブログ</a>
       </li>
       <li class="list-border"></li>
       <div class="clear"></div>
@@ -86,7 +95,7 @@
             <h3 class="title">バナナとは？</h2>
           </div>
           <div class="box-content">
-            <img src="img/top1.png">
+            <img src="<?php bloginfo('template_url'); ?>/img/top1.png">
             <p>バナナとは"バナナを食べるくらいならバナナになれ。"をモットーにバナナで世界に凹みをいれるその日まで戦い続ける組織である。</p>
           </div>
         </div>
@@ -95,15 +104,15 @@
             <h3 class="title">サービス</h2>
           </div>
           <div class="box-content">
-            <img src="img/top2.png">
+            <img src="<?php bloginfo('template_url'); ?>/img/top2.png">
             <p>バナナではあらゆるクリエイティブ事業に挑戦しています。</p>
           </div>
         </div>
         <div class="clear"></div>
       </div>
       <div class="right-content">
-        <img src="img/right1.jpg">
-        <img src="img/right2.jpg">
+        <img src="<?php bloginfo('template_url'); ?>/img/right1.jpg">
+        <img src="<?php bloginfo('template_url'); ?>/img/right2.jpg">
       </div>
       <div class="clear"></div>
     </div>
