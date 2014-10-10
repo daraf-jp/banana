@@ -171,7 +171,7 @@ ul{
 .box-content ul li .date{
   color: #999;
 }
-.box-content ul li .tag{
+.box-content ul li .tag a{
   background-color: #90bc35;
   color: #fff;
   text-decoration: none;

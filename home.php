@@ -75,9 +75,7 @@ Template Name:blog
           <?php endwhile; endif; ?>
         </div>
         <div class="right-content">
-          <h2>カテゴリー</h2>
-          <div class="category"></div>
-          <div class="category"></div>
+          <?php dynamic_sidebar(); ?>
         </div>
         <div class="clear"></div>
       </div>

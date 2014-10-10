@@ -10,6 +10,7 @@ Template Name:blog
 <title>株式会社バナナデザイン</title>
 <link rel="stylesheet"  href="<?php bloginfo('stylesheet_url'); ?>">
 <link rel="stylesheet"  href="<?php bloginfo('template_url'); ?>/css/blog.css">
+<link rel="stylesheet"  href="<?php bloginfo('template_url'); ?>/css/single.css">
 </head>
 <body>
   <nav class="top-nav">
@@ -49,35 +50,38 @@ Template Name:blog
         バナナを食べるくらいならバナナになれ！
         <img src="<?php bloginfo('template_url'); ?>/img/quo2.png" width="30">
       </div>
-      <div class="blog-content">
+      <div class="blog-content single">
         <div class="left-content">
           <?php if(have_posts()): while(have_posts()):the_post(); ?>
-            <div class="box box-small">
-              <a href="<?php the_permalink(); ?>" class="blog-link">
-                <img src="<?php bloginfo('template_url'); ?>/img/blog-banana.png" class="clip">
+            <div class="box box-large">
+              <img src="<?php bloginfo('template_url'); ?>/img/blog-banana.png" class="clip">
+              <div class="date-back">
+                <div class="date"><?php echo get_the_date(); ?></div>
+              </div>
+              <div class="blog-inner">
+                <div class="title">
+                  <?php if(mb_strlen($post->post_title)>30) { $title= mb_substr($post->post_title,0,30) ; echo $title. ･･･ ;
+                  } else {echo $post->post_title;}?>
+                </div>
+                <span class="category-link">
+                  <?php the_category(','); ?>
+                </span>
+                <div class="twitter-facebook">
+                  <?php socialButton(); ?>
+                </div>
+                <div class="clear"></div>
                 <div class="blog-image" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>)">
-                  <div class="date-back">
-                    <div class="date"><?php echo get_the_date(); ?></div>
-                  </div>
                 </div>
-                <div class="blog-inner">
-                  <div class="title">
-                    <?php if(mb_strlen($post->post_title)>30) { $title= mb_substr($post->post_title,0,30) ; echo $title. ･･･ ;
-                    } else {echo $post->post_title;}?>
-                  </div>
-                  <p class="text">
-                    <?php if(mb_strlen($post->post_content)>80) { $content= mb_substr($post->post_content,0,80) ; echo $content. ･･･ ;
-                    } else {echo $post->post_content;}?>
-                  </p>
-                </div>
-              </a>
+                <p class="text">
+                  <?php if(mb_strlen($post->post_content)>80) { $content= mb_substr($post->post_content,0,80) ; echo $content. ･･･ ;
+                  } else {echo $post->post_content;}?>
+                </p>
+              </div>
             </div>
           <?php endwhile; endif; ?>
         </div>
         <div class="right-content">
-          <h2>カテゴリー</h2>
-          <div class="category"></div>
-          <div class="category"></div>
+          <?php dynamic_sidebar(); ?>
         </div>
         <div class="clear"></div>
       </div>

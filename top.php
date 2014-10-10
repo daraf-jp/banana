@@ -50,43 +50,24 @@ Template Name:top
           </div>
           <div class="box-content">
             <ul>
-              <li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li>
-              <li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li>
-              <li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li>
-              <li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li>
-              <li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li><li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li><li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li><li>
-                <span class="date">2014/10/04</span>
-                <a href="" class="tag">サービス</a>
-                <a href="" class="text">BANANAに今秋の新商品がラインナップ。</a>
-              </li>
+              <?php
+              global $post;
+              $args = array( 'posts_per_page' => 20 );
+              $myposts = get_posts( $args );
+              foreach( $myposts as $post ) {
+                  setup_postdata($post);
+                  ?>
+                  <li>
+                    <span class="date"><?php echo get_the_date(); ?></span>
+                    <span class="tag"><?php the_category('｜') ?></span>
+                    <a href="<?php the_permalink(); ?>" class="text">
+                      <?php the_title(); ?>
+                    </a>
+                  </li>
+                  <?php
+              }
+              wp_reset_postdata();
+              ?>
             </ul>
           </div>
         </div>
