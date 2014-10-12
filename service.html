@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>株式会社バナナデザイン</title>
+<link rel="stylesheet"  href="css/dlmenu.css">
 <link rel="stylesheet"  href="style.css">
-<link rel="stylesheet"  href="about.css">
-<link rel="stylesheet"  href="service.css">
+<link rel="stylesheet"  href="css/about.css">
+<link rel="stylesheet"  href="css/service.css">
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/jquery.dlmenu.js"></script>
 </head>
 <body>
   <nav class="top-nav">
@@ -26,6 +30,22 @@
         <a href="service.html" class="active nav-link">事業内容</a>
       </li>
       <li class="list-border"></li>
+      <li>
+        <div id="dl-menu" class="dl-menuwrapper">
+          <button class="dl-trigger">Open Menu</button>
+          <ul class="dl-menu">
+            <li>
+              <a href="index.html" class="dl-link">ホーム</a>
+            </li>
+            <li>
+              <a href="about.html" class="dl-link">組織概要</a>
+            </li>
+            <li>
+              <a href="service.html" class="dl-link active">事業内容</a>
+            </li>
+          </ul>
+        </div><!-- /dl-menuwrapper -->
+      </li>
       <div class="clear"></div>
     </ul>
   </nav>
@@ -96,5 +116,10 @@
       </div>
     </div>
   </div>
+<script type="text/javascript">
+  $(function() {
+    $( '#dl-menu' ).dlmenu();
+  });
+</script>
 </body>
 </html>
